@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Umbrella</string>
+    <string name="zipcode_ref">zipcode</string>
+    <string name="unit_ref">units</string>
+    <string name="today">Today</string>
+    <string name="tommorow">Tommorow</string>
+    <string name="r_string_invalid_zipcode">Invalid ZipCode</string>
+    <string name="save">Save</string>
+    <string name="new_zip_prompt">Enter New ZipCode</string>
+    <string name="new_unit_prompt">Choose Unit</string>
+    <string name="zip_saved">Saved ZipCode</string>
+    <string name="unit_saved">Units Saved</string>
+</resources>
