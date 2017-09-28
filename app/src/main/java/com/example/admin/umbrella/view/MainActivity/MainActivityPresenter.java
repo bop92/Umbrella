@@ -100,6 +100,11 @@ public class MainActivityPresenter implements MainActivityContract.MainPresenter
     }
 
     public void ParseReportLoad(Report report){
+        SharedPreferences.Editor editor = view.getSharedPrefs().edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(report);
+        editor.putString(CONSTANTS.MY_REPORT_CACHE, json);
+        editor.commit();
         forecastList.clear();
         forecastList.addAll(report.getHourlyForecast());
         dayList.clear();
