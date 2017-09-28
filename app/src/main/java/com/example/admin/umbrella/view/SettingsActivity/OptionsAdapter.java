@@ -1,6 +1,5 @@
 package com.example.admin.umbrella.view.SettingsActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,9 +13,6 @@ import com.example.admin.umbrella.util.CONSTANTS;
 
 import java.util.ArrayList;
 
-/**
- * Created by Admin on 9/5/2017.
- */
 
 public class OptionsAdapter extends RecyclerView.Adapter<OptionsAdapter.ViewHolder>{
     private static final String TAG = "OptionsAdapter";

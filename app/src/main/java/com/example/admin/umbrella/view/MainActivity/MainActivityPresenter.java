@@ -25,9 +25,6 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 
-/**
- * Created by Admin on 9/2/2017.
- */
 
 public class MainActivityPresenter implements MainActivityContract.MainPresenter{
 

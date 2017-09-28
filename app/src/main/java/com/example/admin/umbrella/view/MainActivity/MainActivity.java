@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.PersistableBundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +20,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.crashlytics.android.answers.Answers;
 import com.example.admin.umbrella.R;
 import com.example.admin.umbrella.model.HourlyReport.Report;
 import com.example.admin.umbrella.util.CONSTANTS;
@@ -31,11 +29,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import io.fabric.sdk.android.Fabric;
-
 public class MainActivity extends AppCompatActivity implements MainActivityContract.MainView{
     private static final String TAG = "MainActivityView";
-    //do stuff
 
     RecyclerView dailyView;
 

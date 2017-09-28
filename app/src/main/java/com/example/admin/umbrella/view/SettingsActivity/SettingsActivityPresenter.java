@@ -1,11 +1,9 @@
 package com.example.admin.umbrella.view.SettingsActivity;
 
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.admin.umbrella.R;
 import com.example.admin.umbrella.data.WeatherService;
 import com.example.admin.umbrella.model.HourlyReport.Report;
 import com.example.admin.umbrella.model.Option.Option;
@@ -19,9 +17,6 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-/**
- * Created by Admin on 9/2/2017.
- */
 
 public class SettingsActivityPresenter implements SettingsActivityContract.SettingsPresenter {
 
@@ -79,7 +74,6 @@ public class SettingsActivityPresenter implements SettingsActivityContract.Setti
     }
 
 
-    //TODO update cache on settings change
     WeatherService service = new WeatherService();
     public void LoadForecast(){
         service.getWeatherApi()

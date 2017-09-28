@@ -1,6 +1,5 @@
 package com.example.admin.umbrella.view.SettingsActivity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,9 +13,6 @@ import android.widget.Toast;
 import com.example.admin.umbrella.R;
 import com.example.admin.umbrella.util.CONSTANTS;
 
-/**
- * Created by Admin on 9/27/2017.
- */
 
 class ZipDialog extends Dialog{
 

@@ -17,9 +17,6 @@ import com.example.admin.umbrella.util.CONSTANTS;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Admin on 9/27/2017.
- */
 
 class UnitDialog extends Dialog{
 

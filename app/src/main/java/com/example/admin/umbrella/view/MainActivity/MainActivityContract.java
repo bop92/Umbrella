@@ -6,11 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import com.example.admin.umbrella.BasePresenter;
 import com.example.admin.umbrella.BaseView;
 
-
-/**
- * Created by Admin on 9/2/2017.
- */
-
 public interface MainActivityContract {
 
     interface MainView extends BaseView {
