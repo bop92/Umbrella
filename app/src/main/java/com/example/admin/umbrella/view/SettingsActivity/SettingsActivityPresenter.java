@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.admin.umbrella.data.WeatherService;
+import com.example.admin.umbrella.data.WeatherAPIProvider;
 import com.example.admin.umbrella.model.HourlyReport.Report;
 import com.example.admin.umbrella.model.Option.Option;
 import com.example.admin.umbrella.util.CONSTANTS;
@@ -74,7 +74,7 @@ public class SettingsActivityPresenter implements SettingsActivityContract.Setti
     }
 
 
-    WeatherService service = new WeatherService();
+    WeatherAPIProvider service = new WeatherAPIProvider();
     public void LoadForecast(){
         service.getWeatherApi()
                 .getWeatherObservable(CONSTANTS.API_KEY, CONSTANTS.INFO_TYPE, CONSTANTS.QUERY_TYPE, GetZipCode())

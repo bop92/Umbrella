@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import com.example.admin.umbrella.data.WeatherService;
+import com.example.admin.umbrella.data.WeatherAPIProvider;
 import com.example.admin.umbrella.model.HourlyReport.HourlyForecast;
 import com.example.admin.umbrella.model.HourlyReport.Report;
 import com.example.admin.umbrella.util.CONSTANTS;
@@ -31,7 +31,7 @@ public class MainActivityPresenter implements MainActivityContract.MainPresenter
     private static final String TAG = "MainActivityPresenter";
 
     MainActivityContract.MainView view;
-    WeatherService service;
+    WeatherAPIProvider service;
 
     RecyclerView dailyView;
     RecyclerView.LayoutManager linearLayout;
@@ -46,7 +46,7 @@ public class MainActivityPresenter implements MainActivityContract.MainPresenter
 
     public void attachView(MainActivityContract.MainView view) {
         this.view = view;
-        service = new WeatherService();
+        service = new WeatherAPIProvider();
 
         forecastList = new ArrayList<>();
         dayList = new ArrayList<>();

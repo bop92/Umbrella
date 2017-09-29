@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.admin.umbrella.R;
+import com.example.admin.umbrella.inject.MainInject.DaggerMainActivityComponent;
 import com.example.admin.umbrella.model.HourlyReport.Report;
 import com.example.admin.umbrella.util.CONSTANTS;
 import com.example.admin.umbrella.view.SettingsActivity.SettingsActivity;
@@ -28,6 +29,9 @@ import com.example.admin.umbrella.view.SettingsActivity.SettingsActivity;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import javax.inject.Inject;
+
 
 public class MainActivity extends AppCompatActivity implements MainActivityContract.MainView{
     private static final String TAG = "MainActivityView";
@@ -37,7 +41,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     RecyclerView.LayoutManager linearLayout;
     RecyclerView.LayoutManager gridLayout;
 
+    @Inject
     MainActivityPresenter presenter;
+
     TextView tvCity, tvTemp, tvForecast;
     Toolbar toolbar;
 
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         EventBus.getDefault().register(this);
+        DaggerMainActivityComponent.create().inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setBackgroundColor(ContextCompat.getColor(this ,R.color.grey));
@@ -57,7 +64,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         linearLayout = new LinearLayoutManager(this);
         gridLayout = new GridLayoutManager(this, 4);
         dailyView = (RecyclerView) findViewById(R.id.recViewDaily);
-        presenter = new MainActivityPresenter();
+
+
         presenter.attachView(this);
 
         if(presenter.GetZipCode() == null) {

@@ -16,7 +16,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import rx.Observable;
 
-public class WeatherService extends Service {
+public class WeatherAPIProvider {
 
     private static final String BASE_URL = "http://api.wunderground.com/";
     private WeatherApi myWeatherApi;
@@ -25,7 +25,7 @@ public class WeatherService extends Service {
     //http://api.wunderground.com/api/1abced5fd624551e/hourly10day/geolookup/q/94107.json
     //http://api.wunderground.com/api/1abced5fd624551e/forecast10day/geolookup/q/78746.json
 
-    public WeatherService() {
+    public WeatherAPIProvider() {
         //created a logging interceptor
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -41,12 +41,6 @@ public class WeatherService extends Service {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         myWeatherApi = retrofit.create(WeatherApi.class);
-    }
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
     }
 
     public WeatherApi getWeatherApi(){

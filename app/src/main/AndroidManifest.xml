@@ -21,10 +21,6 @@
         <activity android:name=".view.SettingsActivity.SettingsActivity"
             android:label="Settings"/>
 
-        <service
-            android:name=".data.WeatherService"
-            android:enabled="true"
-            android:exported="true"></service>
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="90e9deed0e561d147ddfaf6a20a7aebb95eaccbe" />

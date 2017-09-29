@@ -11,14 +11,19 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.admin.umbrella.R;
+import com.example.admin.umbrella.inject.SettingsInject.DaggerSettingsActivityComponent;
 import com.example.admin.umbrella.model.Option.Option;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
 
 public class SettingsActivity extends AppCompatActivity implements SettingsActivityContract.SettingsView, MyDialogInterface {
 
     private static final String TAG = "SettingsActivity";
     ArrayList<Option> options;
+
+    @Inject
     SettingsActivityPresenter presenter;
 
     RecyclerView.LayoutManager layoutManager;
@@ -31,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity implements SettingsActiv
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        presenter = new SettingsActivityPresenter();
+        DaggerSettingsActivityComponent.create().inject(this);
         presenter.attachView(this);
 
         options = new ArrayList<>();
